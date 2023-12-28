@@ -51,9 +51,7 @@ jobs:
         git config --global user.name "Ritik"
         git add .
         git commit -m "Update deployment.yaml with latest build ${{ github.run_number }}"
-        echo cat ./deployment.yaml
-        git push
+        git push -u origin main
       
-
     - name: Logout from Docker Hub
       run: docker logout
