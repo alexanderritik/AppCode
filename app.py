@@ -14,7 +14,7 @@ def index():
 @app.route("/projects")
 @cache.cached(timeout=60) # 43200 = 12 tuntia
 def get_repos():
-    api_url = "https://api.github.com/users/Na-na13/repos"
+    api_url = "https://api.github.com/users/alexanderritik/repos"
     response = requests.get(api_url).json()
     repos = []
     for data in response:
