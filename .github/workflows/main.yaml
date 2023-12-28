@@ -44,11 +44,6 @@ jobs:
     - name: Update Deployment YAML
       run: |
         sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/test:|image: ${{ secrets.DOCKER_USERNAME }}/test:${{ github.run_number }}|' ./deployment.yaml
-
-    - name: Add Git
-      uses: ad-m/github-push-action@master
-      with:
-          github_token: ${{ secrets.TOKEN }}
     
     - name: Commit and Push Changes
       run: |
