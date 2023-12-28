@@ -40,6 +40,7 @@ jobs:
       with:
         repository: alexanderritik/Infra_of_AppCode
         ref: main # or specify the branch you want
+        token:  ${{ secrets.TOKEN }}
 
     - name: Update Deployment YAML
       run: |
@@ -49,10 +50,9 @@ jobs:
       run: |
         git config --global user.email "ritik201999@gmail.com"
         git config --global user.name "Ritik"
-        git remote add target-repo https://github.com/alexanderritik/Infra_of_AppCode.git
         git add .
         git commit -m "Update deployment.yaml with latest build ${{ github.run_number }}"
-        git push target-repo
+        git push origin master
 
     - name: Logout from Docker Hub
       run: docker logout
