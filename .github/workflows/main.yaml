@@ -51,6 +51,7 @@ jobs:
         git config --global user.name "Ritik"
         git add .
         git commit -m "Update deployment.yaml with latest build ${{ github.run_number }}"
+        git remote add origin https://github.com/alexanderritik/Infra_of_AppCode.git
         git push -u origin main
       
     - name: Logout from Docker Hub
