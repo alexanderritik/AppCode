@@ -53,8 +53,6 @@ jobs:
         git commit -m "Update deployment.yaml with latest build ${{ github.run_number }}"
         echo cat ./deployment.yaml
         git push
-      with:
-        github_token: ${{ secrets.TOKEN }}
       
 
     - name: Logout from Docker Hub
