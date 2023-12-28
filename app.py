@@ -29,3 +29,6 @@ def get_repos():
                 repo['updated_at'] = data['updated_at']
                 repos.append(repo)
     return render_template("projects.html", repos=repos)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
