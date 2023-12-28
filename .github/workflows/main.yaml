@@ -44,7 +44,7 @@ jobs:
 
     - name: Update Deployment YAML
       run: |
-        sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/test:  |image: ${{ secrets.DOCKER_USERNAME }}/test:${{ github.run_number }}|' ./dev/deployment.yaml
+        sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/test:|image: ${{ secrets.DOCKER_USERNAME }}/test:${{ github.run_number }}|' ./dev/deployment.yaml
     
     - name: Git add
       run: |
