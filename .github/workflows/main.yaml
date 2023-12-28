@@ -23,7 +23,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build . --file Dockerfile --tag test:${{ github.run_number }}
+        docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/test:${{ github.run_number }}
 
     - name: Push additional image tag
       run: |
@@ -33,7 +33,7 @@ jobs:
     - name: Checkout Other Repository
       uses: actions/checkout@v2
       with:
-        repository: other-repo-owner/other-repo-name
+        repository: other-repo-owner/other-repo-sname
         ref: main # or specify the branch you want
 
     - name: Update Deployment YAML
