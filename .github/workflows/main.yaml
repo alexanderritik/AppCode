@@ -45,7 +45,8 @@ jobs:
       run: |
         sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/test:|image: ${{ secrets.DOCKER_USERNAME }}/test:${{ github.run_number }}|' ./deployment.yaml
     
-    - run: |
+    - name: Git add
+      run: |
         git config --global user.email "ritik201999@gmail.com"
         git config --global user.name "Ritik"
         git add .
