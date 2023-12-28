@@ -38,7 +38,7 @@ jobs:
     - name: Checkout Other Repository
       uses: actions/checkout@v2
       with:
-        repository: ${OTHER_REPO_AUTHOR_NAME}/${OTHER_REPO_NAME}
+        repository: alexanderritik/Infra_of_AppCode
         ref: main # or specify the branch you want
 
     - name: Update Deployment YAML
