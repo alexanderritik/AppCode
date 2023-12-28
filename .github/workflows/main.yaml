@@ -43,7 +43,7 @@ jobs:
 
     - name: Update Deployment YAML
       run: |
-        sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME:|image: ${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME:${{ github.run_number }}|' /deployment.yaml
+        sed -i 's|image: ${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME:|image: ${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME:${{ github.run_number }}|' deployment.yaml
 
     - name: Commit and Push Changes
       run: |
